@@ -2,7 +2,7 @@
 <head>
     <style>
         body,html{
-            background-color:#222222;
+            background-color:#252525;
             margin:0;
             padding:0;
             height:100%;
@@ -20,16 +20,66 @@
         .info{
             background:rgba(0,0,0,0.2);
         }
+        .menuButton{
+            position:absolute;
+            background:#252525;
+            height:60px;
+            width:60px;
+            right:0px;
+            border:none;
+            border-bottom:10px solid #E88934;
+            box-shadow:0 0 25px rgba(219, 94, 36, 0.5);
+            transition:0.5s;
+            color:#E88934;
+            text-shadow: 2px 2px 5px rgba(219, 94, 36, 0.5);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            text-align: center;
+        }
+        .menuButton:hover{
+            border-bottom:10px solid #db5e24;
+            background:#111111;
+            transition:0.3s;
+            right:5px;
+        }
+        .menuButton:active{
+            box-shadow:0 0 25px 10px rgba(219, 94, 36, 0.5);
+            transition:0s
+        }
 
         #objects{
             position:absolute;
             height:75%;
             width:25%;
+            top:0;
         }
         #systemInfo{
             position:absolute;
-            height:75%;
+            height:25%;
             width:25%;
+            bottom:0;
+        }
+        #exit{
+            bottom:0px;
+        }
+        #gen{
+            top:0px;
+        }
+        #save{
+            top:60px;
+        }
+        #load{
+            top:120px;
+        }
+        #about{
+            top:180px;
+        }
+        #menubar{
+            position:absolute;
+            right:0;
+            height:100%;
+            background:linear-gradient(90deg, transparent 20%,#111111 20%);
+            width:60px;
         }
     </style>
     <title>Planet Carver</title>
@@ -37,6 +87,19 @@
 <body>
     <div id="objects" class="info">
         Planets and system objects
+    </div>
+    <div id="systemInfo" class="info">
+        General System Information
+    </div>
+
+    <div id="menubar">
+        <button class="menuButton" id="gen" onclick="">New</button>
+        <button class="menuButton" id="save">Save</button>
+        <button class="menuButton" id="load">Load</button>
+
+        <button class="menuButton" id="about">About</button>
+
+        <button class="menuButton" id="exit">&#128936;</button>
     </div>
     
     <script type="text/javascript" src="scripts/seedrandom.js"></script>

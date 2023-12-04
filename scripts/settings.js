@@ -1,4 +1,14 @@
 //handles the menu
-function lockSeeds(){
+function setScreen(screen){
+    switch(screen){
+        case "save":
 
+        break;
+        case "gen":
+
+        break;
+        case "about":
+
+        break;
+    }
 }
