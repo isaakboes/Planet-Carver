@@ -24,22 +24,37 @@
         }
         .planet{
             position:relative;
-            width:100%;
+            width:90%;
             height:70px;
-            border-bottom:10px;
+            left:0;
             margin:0;
+            margin-bottom:10px;
             padding:0;
+            transition:1s;
+            background:transparent;
+        }
+        .planet:hover{
+            left:10px;
+            transition:1px;
+            background:rgba(128,128,128,0.05);
+        }
+        .planet:hover .planetLable{
+            left:10px;
+            bottom:-5px;
+            height:25px;
+            transition:1px;
         }
         .planetLable{
             position:absolute;
             left:0;
-            right:0;
-            height:10px;
+            width:100%;
+            height:20px;
             bottom:0px;
             background:rgb(72, 231, 255);
             box-shadow: 2px 2px 5px rgb(72, 231, 255, 0.5);
-
-
+            color:#222222;
+            line-height:20px;
+            transition:1s
         }
         .tab{
             position:absolute;
@@ -122,10 +137,16 @@
         <div id="planetContainer" class="info">
             <div class="tab tabLeft">&#x25C0;</div>
             <div class="planet">
-                Information.exe
+                <span>Information.exe</span>
+                <div class="planetLable">test</div>
+            </div>
+            <div class="planet">
+                <span>Information.exe</span>
+                <div class="planetLable">test</div>
             </div>
         </div>
     </div>
+
     <div id="settingsTrigger" class="trigger">
         <div id="settings" class="info">
             <div class="tab tabRight">&#x25C0;</div>
