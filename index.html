@@ -5,17 +5,39 @@
             background-color:#222222;
             margin:0;
             padding:0;
+            height:100%;
+            width:100%;
             color:#E88934;
-            text-shadow: 2px 2px 5px rgba(72, 231, 255, 0.5);
+            text-shadow: 2px 2px 5px rgba(219, 94, 36, 0.5);
             font-family: 'Courier New', Courier, monospace;
             font-weight: 800;
             overflow:hidden;
+        }
+        div{
+            outline:1px solid red;
+        }
+
+        .info{
+            background:rgba(0,0,0,0.2);
+        }
+
+        #objects{
+            position:absolute;
+            height:75%;
+            width:25%;
+        }
+        #systemInfo{
+            position:absolute;
+            height:75%;
+            width:25%;
         }
     </style>
     <title>Planet Carver</title>
 </head>
 <body>
-    test
+    <div id="objects" class="info">
+        Planets and system objects
+    </div>
     
     <script type="text/javascript" src="scripts/seedrandom.js"></script>
     <script type="text/javascript" src="scripts/settings.js"></script>
