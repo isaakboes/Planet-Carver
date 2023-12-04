@@ -5,8 +5,8 @@
             background-color:#222222;
             margin:0;
             padding:0;
-            color:rgb(72, 231, 255);
-            text-shadow: 2px 2px 5px rgb(72, 231, 255, 0.5);
+            color:rgb(71, 231, 255);
+            text-shadow: 2px 2px 5px rgba(72, 231, 255, 0.5);
             font-family: 'Courier New', Courier, monospace;
             font-weight: 800;
             overflow:hidden;
@@ -30,18 +30,19 @@
             margin:0;
             margin-bottom:10px;
             padding:0;
-            transition:1s;
+            transition:0.5s;
             background:transparent;
         }
         .planet:hover{
             left:10px;
             transition:1px;
-            background:rgba(128,128,128,0.05);
+            background: rgba(72,231,255,0.1);
         }
         .planet:hover .planetLable{
             left:10px;
             bottom:-5px;
             height:25px;
+            line-height:25px;
             transition:1px;
         }
         .planetLable{
@@ -87,11 +88,11 @@
             bottom:0px;
             left:-25vw;
             width:25vw;
-            transition:1s;
+            transition:0.5s;
         }
         #planetTrigger:hover #planetContainer{
             left:0;
-            transition:1s;
+            transition:0.5s;
         }
         #settingsTrigger{
             position:absolute;
@@ -106,10 +107,10 @@
             width:25vw;
             top:0;
             height:100%;
-            transition:1s;
+            transition:0.5s;
         }
         #settingsTrigger:hover #settings{
-            transition:1s;
+            transition:0.5s;
             right:0;
         }
         input{
