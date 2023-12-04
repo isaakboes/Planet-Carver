@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body,html{
+            background-color:#222222;
+            margin:0;
+            padding:0;
+            color:rgb(71, 231, 255);
+            text-shadow: 2px 2px 5px rgba(72, 231, 255, 0.5);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            overflow:hidden;
+        }
+
+
+
+        .trigger{
+            position:absolute;
+            background:transparent;
+            display:block;
+            border:none;
+            padding:none;
+            margin:none;
+        }
+        .info{
+            background:rgba(0,0,0,0.3);
+        }
+        .planet{
+            position:relative;
+            width:90%;
+            height:70px;
+            left:0;
+            margin:0;
+            margin-bottom:10px;
+            padding:0;
+            transition:0.5s;
+            background:transparent;
+        }
+        .planet:hover{
+            left:10px;
+            transition:0.5s;
+            background: rgba(72,231,255,0.1);
+        }
+        .planet:active{
+            top:1px;
+            transition:0.5s;
+            background: rgba(72, 231, 255, 0.2);
+        }
+        .planet::after{
+            content:"";
+            position:absolute;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            display:block;
+            opacity:0;
+            box-shadow: 0 0 10px 20px rgba(72, 231, 255, 0.2);
+            transition:0.5s
+        }
+        .planet:active::after{
+            transition:0s;
+            opacity:1;
+            background: rgba(170, 244, 255, 0.1);
+            box-shadow: 0 0 0 0 rgba(136, 239, 255, 0.2);
+        }
+        .planet:hover .planetLable{
+            left:10px;
+            bottom:-5px;
+            height:25px;
+            line-height:25px;
+            transition:1px;
+        }
+        .planetLable{
+            position:absolute;
+            left:0;
+            width:100%;
+            height:20px;
+            bottom:0px;
+            background:rgb(72, 231, 255);
+            box-shadow: 2px 2px 5px rgb(72, 231, 255, 0.5);
+            color:#222222;
+            line-height:20px;
+            transition:1s
+        }
+        .tab{
+            position:absolute;
+            width:25px;
+            height:100px;
+            bottom:0;
+            background:rgba(0,0,0,0.3);
+            text-align:center;
+            vertical-align: middle;
+            line-height: 100px;
+        }
+        .tabLeft{
+            right:-25px;
+            border-radius: 0px 25px 25px 0px;
+        }
+        .tabRight{
+            left:-25px;
+            border-radius: 25px 0px 0px 25px;
+        }
+        #planetTrigger{
+            position:absolute;
+            left:0;
+            top:0;
+            height:100%;
+            width:30px;
+        }
+        #planetContainer{
+            position:absolute;
+            top:0;
+            bottom:0px;
+            left:-25vw;
+            width:25vw;
+            transition:0.5s;
+        }
+        #planetTrigger:hover #planetContainer{
+            left:0;
+            transition:0.5s;
+        }
+        #settingsTrigger{
+            position:absolute;
+            right:0;
+            top:0;
+            height:100%;
+            width:30px;
+        }
+        #settings{
+            position:absolute;
+            right:-25vw;
+            width:25vw;
+            top:0;
+            height:100%;
+            transition:0.5s;
+        }
+        #settingsTrigger:hover #settings{
+            transition:0.5s;
+            right:0;
+        }
+        input{
+            background:#222222;
+            border-radius:0;
+            border:none;
+            user-select: none;
+            color:rgb(72, 231, 255);
+            text-shadow: 2px 2px 5px rgb(72, 231, 255, 0.5);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
+            &:focus { 
+                outline:0;
+            }
+            
+        }
+        /*selection highlighting*/
+        ::selection,::-moz-selection{
+            background:rgba(128,128,128,0.1);
+            outline:1px solid #48e7ff;
+        }
+
+    </style>
+    <title>Planet Carver</title>
+</head>
+<body>
+    <div id="planetTrigger" class="trigger">
+        <div id="planetContainer" class="info">
+            <div class="tab tabLeft">&#x25C0;</div>
+            <div class="planet">
+                <span>Information.exe</span>
+                <div class="planetLable">test</div>
+            </div>
+            <div class="planet">
+                <span>Information.exe</span>
+                <div class="planetLable">test</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsTrigger" class="trigger">
+        <div id="settings" class="info">
+            <div class="tab tabRight">&#x25B6;</div>
+            <div>
+                <span>Seed</span>
+                <input id="seed" type="text" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripts/seedrandom.js"></script>
+    <script type="text/javascript" src="scripts/settings.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+</body>
