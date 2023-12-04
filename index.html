@@ -5,21 +5,32 @@
             background-color:#202225;
             margin:0;
             padding:0;
+            color:rgb(72, 231, 255);
+            text-shadow: 2px 2px 5px rgb(72, 231, 255, 0.5);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 800;
         }
         .info{
-            background: linear-gradient(90deg, rgba(0,0,0,0.3), transparent);
             position:absolute;
             top:0;
-            bottom:0;
+            bottom:100px;
             left:0;
             width:25vw;
         }
         .planet{
             position:relative;
             width:100%;
-            height:100px;
+            height:70px;
             border-bottom:10px;
-            background:rgba(0,0,0,0.5);
+            background:rgba(0,0,0,0.1);
+        }
+        .settings{
+            position:absolute;
+            bottom:0px;
+            left:0;
+            right:0;
+            height:100px;
+            background:#15171b;
         }
 
     </style>
@@ -27,6 +38,14 @@
 </head>
 <body>
     <div class="info">
-        <div class="planet">test</div>
+        <div class="planet">
+            Information.exe
+        </div>
     </div>
+    <div class="settings">
+
+    </div>
+    <script type="text/javascript" src="scripts/seedrandom.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
 </body>
