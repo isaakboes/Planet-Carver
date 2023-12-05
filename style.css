@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 body,html{
     background-color:#151515;
     margin:0;
@@ -7,6 +8,7 @@ body,html{
     color:#E88934;
     text-shadow: 0px 0px 5px rgba(219, 94, 36, 0.5);
     font-family: 'Courier New', Courier, monospace;
+    font-family: 'Pixelify Sans', sans-serif;
     font-weight: 800;
     overflow:hidden;
 }
@@ -44,12 +46,32 @@ div{
     box-shadow:0 0 25px 10px rgba(219, 94, 36, 0.5);
     transition:0s
 }
+.title{
+    position:absolute;
+    width:100%;
+    text-align: center;
+    font-size: 32px;
+    top:15px;
+}
+.information{
+    position:absolute;
+    overflow:scroll;
+    left:30px;
+    right:30px;
+    top:100px;
+    bottom:30px;
+    scrollbar-color: #E88934 transparent;
+    scrollbar-width: thin;
+}
+
 
 #systemInfo{
     position:absolute;
     height:100%;
     width:25%;
     bottom:0;
+    left:0;
+    transition:0.6s;
 }
 #closeInfo{
     user-select: none;
@@ -65,7 +87,31 @@ div{
     top:0;
     transition:0.3s
 }
+#openInfo{
+    display: block;
+    user-select: none;
+    cursor:pointer;
+    text-shadow: 0px 0px 5px rgba(219, 94, 36, 0.5);
+    font-size: 32px;
+    text-align: center;
+    line-height:30px;
+    width:30px;
+    height:30px;
+    position:fixed;
+    left:-30px;
+    top:10;
+    transition:0.3s;
+}
+#openInfo.close{
+    display:block;
+    transition:0.6s;
+    left:0px;
+}
 #closeInfo:hover{
     text-shadow: 0px 0px 10px rgba(219, 94, 36, 1);
-    transition:0.3s
+    transition:0.3s;
+}
+#systemInfo.close{
+    left:-25%;
+    transition:0.6s;
 }

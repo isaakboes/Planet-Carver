@@ -12,3 +12,12 @@ function setScreen(screen){
         break;
     }
 }
+function setInfoPanel(state){
+    if(state){
+        document.getElementById("systemInfo").classList.remove("close");
+        document.getElementById("openInfo").classList.remove("close");
+    }else{
+        document.getElementById("systemInfo").classList.add("close");
+        document.getElementById("openInfo").classList.add("close");
+    }
+}
