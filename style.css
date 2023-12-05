@@ -74,6 +74,24 @@ div{
     top:-100%;
     transition:0.6s;
 }
+.closeFull{
+    user-select: none;
+    cursor:pointer;
+    text-shadow: 0px 0px 5px rgba(219, 94, 36, 0.5);
+    font-size: 40px;
+    text-align: center;
+    line-height:40px;
+    width:40px;
+    height:40px;
+    position:absolute;
+    right:0;
+    top:0;
+    transition:0.3s
+}
+.closeFull:hover{
+    text-shadow: 0px 0px 10px rgba(219, 94, 36, 1);
+    transition:0.3s;
+}
 
 #tools{
     position:absolute;
