@@ -5,7 +5,7 @@ body,html{
     height:100%;
     width:100%;
     color:#E88934;
-    text-shadow: 2px 2px 5px rgba(219, 94, 36, 0.5);
+    text-shadow: 0px 0px 5px rgba(219, 94, 36, 0.5);
     font-family: 'Courier New', Courier, monospace;
     font-weight: 800;
     overflow:hidden;
@@ -52,6 +52,20 @@ div{
     bottom:0;
 }
 #closeInfo{
+    user-select: none;
+    cursor:pointer;
+    text-shadow: 0px 0px 5px rgba(219, 94, 36, 0.5);
+    font-size: 32px;
+    text-align: center;
+    line-height:30px;
+    width:30px;
+    height:30px;
     position:absolute;
-    
+    right:0;
+    top:0;
+    transition:0.3s
+}
+#closeInfo:hover{
+    text-shadow: 0px 0px 10px rgba(219, 94, 36, 1);
+    transition:0.3s
 }
