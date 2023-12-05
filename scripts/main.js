@@ -12,24 +12,6 @@ setInterval(function(){//sets the canvas width and height every second
 },1000);//end setInterval
 var percentComplete = 0;//the percentage completion of the current generation
 
-//--temporary-- VERY IMPORTANT
-var x = 0;
-var y = 0;
-var xv = 1;
-var yv = 1;
-var degrees = 0;
-setInterval(function(){
-    ctx.fillStyle="hsl("+degrees+"deg, 100%, 50%)";
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillRect(x,y,50,50);
-    x+=xv;
-    y+=yv;
-    if(x<=0||x+50>=canvas.width){xv=-xv}
-    if(y<=0||y+50>=canvas.height){yv=-yv}
-
-    if(degrees<360){degrees++}else{degrees=0}
-},5);
-
 //init begins the creation process for the solar system
 function init(){
     percentComplete=0;//resets the completion percentage

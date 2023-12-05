@@ -102,6 +102,9 @@ canvas{
     display:block;
     position:fixed;
 }
+.console{
+    margin-bottom:10px;
+}
 .console::before{
     content:"[@] ";
 }
