@@ -61,6 +61,12 @@ div{
     scrollbar-color: #E88934 transparent;
     scrollbar-width: thin;
 }
+.information::-webkit-scrollbar{
+    background:transparent
+}
+.information::-webkit-scrollbar-thumb{
+    background:#E88934;
+}
 .fullscreen{
     position:fixed;
     top:0;
