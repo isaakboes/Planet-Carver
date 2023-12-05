@@ -18,7 +18,7 @@ div{
 }
 
 .info{
-    background:#111111;
+    background:rgba(18, 18, 18, 0.8);
 }
 
 .menuButton{
@@ -92,7 +92,24 @@ div{
     text-shadow: 0px 0px 10px rgba(219, 94, 36, 1);
     transition:0.3s;
 }
+canvas{
+    display:block;
+    position:fixed;
+}
+.console::before{
+    content:"[@] ";
+}
 
+#consoleContainer{
+    left:50%;
+    right:0;
+    top:0;
+    bottom:0;
+    position:absolute;
+}
+#console{
+    border:3px solid #151515;
+}
 #tools{
     position:absolute;
     height:100%;
