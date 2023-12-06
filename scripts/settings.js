@@ -49,6 +49,9 @@ function generateSeed(length) {//https://stackoverflow.com/questions/1349404/gen
     return result;
 }
 
+document.onload = document.getElementsByName("seed")[0].value=generateSeed(30);
+
+
 function setToolPanel(state){
     if(state){
         document.getElementById("tools").classList.remove("close");

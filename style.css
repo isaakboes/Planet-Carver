@@ -109,6 +109,39 @@ canvas{
     content:"[@] ";
 }
 
+#seedLable{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+    width:400px;
+    height:40px;
+    font-size: 24px;
+    text-align: center;
+}
+#seed{
+    color:#E88934;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Pixelify Sans', sans-serif;
+    position:absolute;
+    border-radius: 0;
+    border:none;
+    background:#151515;
+    left:0;
+    right:0;
+    top:55px;
+    bottom:0;
+    margin:auto;
+    width:400px;
+    height:40px;
+
+}
+input:focus{
+    outline: none;
+}
 #genButton{
     position: absolute; 
     left: 0; 
