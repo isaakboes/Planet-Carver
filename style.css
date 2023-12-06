@@ -110,8 +110,15 @@ canvas{
 }
 
 #consoleContainer{
-    left:50%;
+    left:70%;
     right:0;
+    top:0;
+    bottom:0;
+    position:absolute;
+}
+#genPanel{
+    right:30%;
+    left:0;
     top:0;
     bottom:0;
     position:absolute;
