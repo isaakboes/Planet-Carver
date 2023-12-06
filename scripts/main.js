@@ -42,6 +42,7 @@ function init(){
     also creates div elements for displaying information on the celestial bodies as needed
 =======================================================================================================================================================*/
 function createPlanetaryBodies(){
+    print("Creating celestial objects and choosing solar system composition");
     //choosing a central body
 
     /*
