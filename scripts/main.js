@@ -1,31 +1,46 @@
+/*=======================================================================================================================================================
+    variable declaration area, as well as an area for general setup, class information, and utility functions.
+=======================================================================================================================================================*/
 //setting up the canvas for rendering
-const canvas = document.getElementById("canv");//sets the canvas
-const ctx = canvas.getContext('2d');//sets the context of the canvas
-ctx.globalAlpha = 1;//sets the alpha to 1 (this is default)
-var pageWidth = window.innerWidth;//finds the window width
-var pageHeight = window.innerHeight-5;//finds the window height
-setInterval(function(){//sets the canvas width and height every second
-    pageWidth = window.innerWidth;//finds the window width every second
-    pageHeight = window.innerHeight-5;//finds the window height every second
-    canvas.width = pageWidth;//sets canvas width to page width
-    canvas.height = pageHeight;//sets canvas height to page height
-},1000);//end setInterval
-var percentComplete = 0;//the percentage completion of the current generation
-function print(output){//printing messages to the custom console; used for progress updates, NOT webpage errors
-    var println = document.createElement("div");//creates new div
-    println.classList.add("console");//gives the div the 'console' class
-    println.appendChild(document.createTextNode(output));//appends text to the div
+const canvas = document.getElementById("canv"); //sets the canvas
+const ctx = canvas.getContext('2d');            //sets the context of the canvas
+ctx.globalAlpha = 1;                            //sets the alpha to 1 (this is default)
+var pageWidth = window.innerWidth;              //finds the window width
+var pageHeight = window.innerHeight-5;          //finds the window height
+setInterval(function(){                         //sets the canvas width and height every second
+    pageWidth = window.innerWidth;              //finds the window width every second
+    pageHeight = window.innerHeight-5;          //finds the window height every second
+    canvas.width = pageWidth;                   //sets canvas width to page width
+    canvas.height = pageHeight;                 //sets canvas height to page height
+},1000);                                        //end setInterval
+var percentComplete = 0;                        //the percentage completion of the current generation
+function print(output){                                     //printing messages to the custom console; used for progress updates, NOT webpage errors
+    var println = document.createElement("div");            //creates new div
+    println.classList.add("console");                       //gives the div the 'console' class
+    println.appendChild(document.createTextNode(output));   //appends text to the div
     document.getElementById("console").appendChild(println);//appends the div to the console
+}//end print
+var running = false;                            //is the simulation running
+const delay = 100;                              //amount of time (msec) to wait in between steps
+/*=======================================================================================================================================================
+    init begins the creation process for the solar system, initalizing variables and seeding the random generator.
+=======================================================================================================================================================*/
+function init(){
+    if(!running){                                                                       //if the program is not already running
+        percentComplete=0;                                                              //resets the completion percentage
+        running=true;                                                                   //marks the program as 'running'
+        document.getElementById("genButton").classList.add("down");                     //visually shows that the program is running
+        print("Using \""+document.getElementById("seed").value+"\" as generation seed");//prints to the custom console
+        Math.seedrandom(document.getElementById("seed").value);                         //seeds the random generator based on the seed input
+
+        setTimeout(createPlanetaryBodies(),delay);                                        //waits before continuing to avoid browser freeze
+    }                                                                                   //if a simulation is already running do nothing
 }
 
-//init begins the creation process for the solar system
-function init(){
-    percentComplete=0;//resets the completion percentage
-    print("Using \""+document.getElementById("seed").value+"\" as generation seed");
-    Math.seedrandom(document.getElementById("seed").value);//seeds the random generator based on the seed input
-}
-//creates the basic framework for the solar system by choosing a centeral body, and amount of planets, astroid belts, comets, material composition, etc
-//also creates div elements for displaying information on the celestial bodies as needed
+/*=======================================================================================================================================================
+    creates the basic framework for the solar system by choosing a centeral body, and amount of planets, astroid belts, comets, material composition, etc
+    also creates div elements for displaying information on the celestial bodies as needed
+=======================================================================================================================================================*/
 function createPlanetaryBodies(){
     //choosing a central body
 

@@ -185,8 +185,19 @@ input:focus{
 }
 #genButton:active::after{
     bottom:0;
-    border-bottom:0 solid #E88934;
+    transition:0.1s;
+}
+#genButton.down{
+    box-shadow: 0 0 0 0 #111111;
+    transition:0.01s;
+    background:#111111;
 
+}
+#genButton.down::after{
+    bottom:0;
+    background:#111111;
+    text-shadow: none;
+    color:rgb(133, 56, 21);
     transition:0.1s;
 }
 #consoleContainer{
