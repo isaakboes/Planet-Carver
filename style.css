@@ -113,30 +113,48 @@ canvas{
     position: absolute; 
     left: 0; 
     right: 0; 
-    bottom:80px;
-    text-align:center;
+    bottom:90px;
     margin-left: auto; 
     margin-right: auto; 
     width: 250px;
     height:70px;
-    background:#151515;
-    color:rgba(219, 94, 36, 1);
-    line-height: 70px;
-    font-size: 36px;
-    border-bottom:0 solid #111111;
-    box-shadow: none;
-    text-shadow: 0px 0px 5px rgba(219, 94, 36, 0.5);
+    box-shadow:0 10px 25px 5px rgba(219, 94, 36, 0.5);
+    background:#E88934;
     transition:1s
 
 }
-#genButton:hover{
-    color:#E88934;
-    background:#222222;
-    text-shadow: 0px 4px 25px rgba(219, 94, 36, 0.5);
-    box-shadow:0 0 25px 5px rgba(219, 94, 36, 0.5);
-    border-bottom:10px solid #111111;
-    bottom:90px;
+#genButton::after{
+    content:"Generate!";
+    position:absolute;
+    background:#151515;
+    line-height: 70px;
+    color:rgba(219, 94, 36, 1);
+    font-size: 36px;
+    left:0;
+    bottom:10px;
+    width: 250px;
+    height:70px;
+    text-shadow: 0px 0px 5px rgba(219, 94, 36, 0.5);
+    text-align:center;
     transition:1s;
+}
+#genButton:hover::after{
+    color:#E88934;
+    background:#1d1a18;
+    text-shadow: 0px 0px 20px rgba(219, 94, 36, 1);
+
+    transition:1s;
+}
+#genButton:active{
+    box-shadow:0 0 0 0 rgba(219, 94, 36, 0.5);
+    transition:0.1s;
+
+}
+#genButton:active::after{
+    bottom:0;
+    border-bottom:0 solid #E88934;
+
+    transition:0.1s;
 }
 #consoleContainer{
     left:70%;
