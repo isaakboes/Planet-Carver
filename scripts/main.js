@@ -11,11 +11,18 @@ setInterval(function(){//sets the canvas width and height every second
     canvas.height = pageHeight;//sets canvas height to page height
 },1000);//end setInterval
 var percentComplete = 0;//the percentage completion of the current generation
+function print(output){//printing messages to the custom console; used for progress updates, NOT webpage errors
+    var println = document.createElement("div");//creates new div
+    println.classList.add("console");//gives the div the 'console' class
+    println.appendChild(document.createTextNode(output));//appends text to the div
+    document.getElementById("console").appendChild(println);//appends the div to the console
+}
 
 //init begins the creation process for the solar system
 function init(){
     percentComplete=0;//resets the completion percentage
-    Math.seedrandom(document.getElementById("seed").innerHTML+getElementById("eccentricity").innerHTML);//seeds the random generator based on the seed input
+    print("Using \""+document.getElementById("seed").value+"\" as generation seed");
+    Math.seedrandom(document.getElementById("seed").value);//seeds the random generator based on the seed input
 }
 //creates the basic framework for the solar system by choosing a centeral body, and amount of planets, astroid belts, comets, material composition, etc
 //also creates div elements for displaying information on the celestial bodies as needed
