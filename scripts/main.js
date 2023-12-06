@@ -20,6 +20,25 @@ function init(){
 //creates the basic framework for the solar system by choosing a centeral body, and amount of planets, astroid belts, comets, material composition, etc
 //also creates div elements for displaying information on the celestial bodies as needed
 function createPlanetaryBodies(){
-    //choosing a centeral body
+    //choosing a central body
 
+    /*
+    Suggested probabilities for stars:
+    
+    Numbers are approximate
+    Radius, Mass, Luminosity are relative to sun
+    Type        | Prob | Temp(kK) | Radius | Mass  | Luminosity | Lifetime (yrs)
+
+    Main M      | 70%  | 3.2      | 0.3    | 0.2   | 0.01       | 200G
+    Main K      | 10%  | 4.5      | 0.8    | 0.7   | 0.2        | 50G
+    Main G      | 5.5% | 5.7      | 1      | 1     | 1          | 10G
+    Main F      | 3.5% | 6.5      | 1.3    | 1.5   | 4          | 3G
+    Main A      | 2%   | 8.5      | 1.7    | 2     | 20         | 1G
+    Main B      | 1%   | 20       | 5      | 10    | 1k         | 100M
+    Main O      | 0.1% | 40       | 10     | 50    | 100k       | 10M
+    White Dwarf | 6.5% | <80      | <0.01  | <1.5  | <0.01      | long time
+    Giant       | 1%   | 3-10     | 10-50  | 1-5   | 50-1k      | 1G
+    Supergiant  | .4%  | 4-40     | 30-500 | 10-70 | 30k-1M     | 10M
+
+    */
 }
