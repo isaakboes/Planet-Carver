@@ -36,7 +36,7 @@ async function init(){
     if(!running){
         print("Getting Config...");                                                     //prints to get the config json
         try{
-            let config = JSON.parse(await fetchTimeout("scripts/config.json",5000));            //calling for the json config file and parsing
+            let config = JSON.parse(await fetchTimeout("https://rpgrat.org/planet/config.json",5000));            //calling for the json config file and parsing
         }catch(error){
             print("Could not access JSON, Exiting...")
             return;
