@@ -22,26 +22,11 @@ function print(output){                                     //printing messages 
 }//end print
 var running = false;                            //is the simulation running
 const delay = 100;                              //amount of time (msec) to wait in between steps
-const fetchTimeout = (url, ms, { signal, ...options } = {}) => {            //https://stackoverflow.com/questions/46946380/fetch-api-request-timeout/57888548#57888548
-    const controller = new AbortController();                               //fetching json with a timeout
-    const promise = fetch(url, { signal: controller.signal, ...options });
-    if (signal) signal.addEventListener("abort", () => controller.abort());
-    const timeout = setTimeout(() => controller.abort(), ms);
-    return promise.finally(() => clearTimeout(timeout));
-  };
 /*=======================================================================================================================================================
     init begins the creation process for the solar system, initalizing variables and seeding the random generator.
 =======================================================================================================================================================*/
 async function init(){
     if(!running){
-        print("Getting Config...");                                                     //prints to get the config json
-        try{
-            let config = JSON.parse(await fetchTimeout("https://rpgrat.org/planet/config.json",5000));            //calling for the json config file and parsing
-        }catch(error){
-            print("Could not access JSON, Exiting...")
-            return;
-        }
-        print("Downloaded JSON...")
         print("Beginning Generation...")                                                //if the program is not already running
         percentComplete=0;                                                              //resets the completion percentage
         running=true;                                                                   //marks the program as 'running'
@@ -59,7 +44,7 @@ async function init(){
 function createCenteralBodies(){
     print("Creating celestial objects and choosing solar system composition");
     //choosing a central body
-
+    
     /*
     Suggested probabilities for stars:
     
@@ -80,7 +65,7 @@ function createCenteralBodies(){
 
     Black Hole  | .3%  | 0-10000  | 
     */
-
+    
 }
 function selectElementalMakeup(){
     //choosing an elemental composition of the system
