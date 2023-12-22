@@ -33,7 +33,7 @@ async function init(){
         document.getElementById("genButton").classList.add("down");                     //visually shows that the program is running
         print("Using \""+document.getElementById("seed").value+"\" as generation seed");//prints to the custom console
         Math.seedrandom(document.getElementById("seed").value);                         //seeds the random generator based on the seed input
-
+        print("Creating celestial objects and choosing solar system composition");
         setTimeout(createCenteralBodies(),delay);                                      //waits before continuing to avoid browser freeze
     }                                                                                   //if a simulation is already running do nothing
 }
@@ -41,10 +41,8 @@ async function init(){
     creates the basic framework for the solar system by choosing a centeral body also creates div elements for displaying information on the celestial 
     bodies as needed
 =======================================================================================================================================================*/
-function createCenteralBodies(){
-    print("Creating celestial objects and choosing solar system composition");
+function createCenteralBodies(recursion = 0){
     //choosing a central body
-    
     /*
     Suggested probabilities for stars:
     
