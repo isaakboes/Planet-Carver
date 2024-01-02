@@ -20,6 +20,7 @@ function print(output){                                     //printing messages 
     println.appendChild(document.createTextNode(output));   //appends text to the div
     document.getElementById("console").appendChild(println);//appends the div to the console
 }//end print
+var system = {}                                 //the system variable, contains all data in the system
 var running = false;                            //is the simulation running
 const delay = 100;                              //amount of time (msec) to wait in between steps
 /*=======================================================================================================================================================
@@ -35,6 +36,8 @@ async function init(){
         Math.seedrandom(document.getElementById("seed").value);                         //seeds the random generator based on the seed input
         print("Creating celestial objects and choosing solar system composition");
         setTimeout(createCenteralBodies(),delay);                                      //waits before continuing to avoid browser freeze
+        setTimeout(createOrbitalBodies(),delay);
+        setTimeout(createSurfaceMaps(),delay);
     }                                                                                   //if a simulation is already running do nothing
 }
 /*=======================================================================================================================================================
@@ -63,7 +66,8 @@ function createCenteralBodies(recursion = 0){
 
     Black Hole  | .3%  | 0-10000  | 
     */
-    
+    system.center = [];     //setting the system center to an array
+    system.center.push(new CenteralBody(1,1,[]));//dummy star
 }
 function selectElementalMakeup(){
     //choosing an elemental composition of the system
