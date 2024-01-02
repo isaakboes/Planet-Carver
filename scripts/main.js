@@ -67,7 +67,7 @@ function createCenteralBodies(recursion = 0){
     Black Hole  | .3%  | 0-10000  | 
     */
     system.center = [];     //setting the system center to an array
-    system.center.push(new CenteralBody(1,1,[]));//dummy star
+    system.center.push(new Object(1,1,[]));//dummy star
 }
 function selectElementalMakeup(){
     //choosing an elemental composition of the system
@@ -85,4 +85,12 @@ function selectElementalMakeup(){
 
             element percentages are included in config.json
     */
+}
+function createOrbitalBodies(){
+    //adding planets and other orbiting objects
+    system.bodies = [];
+    system.bodies.push(new Planet)
+}
+function createSurfaceMaps(){
+
 }
