@@ -67,7 +67,7 @@ function createCenteralBodies(recursion = 0){
     Black Hole  | .3%  | 0-10000  | 
     */
     system.center = [];     //setting the system center to an array
-    system.center.push(new Object(1,1,[]));//dummy star
+    system.center.push(new Object(1,1,1,[]));//dummy star
 }
 function selectElementalMakeup(){
     //choosing an elemental composition of the system
@@ -82,15 +82,27 @@ function selectElementalMakeup(){
             
             [La][Ce][Pr][Nd][Pm][Sm][Eu][Gd][Tb][Dy][Ho][Er][Tm][Yb][Lu]
             [Ac][Th][Pa][U ][Np][Pu][Am][Cm][Bk][Cf][Es][Fm][Md][No][Lr]
-
-            element percentages are included in config.json
     */
 }
 function createOrbitalBodies(){
     //adding planets and other orbiting objects
     system.bodies = [];
-    system.bodies.push(new Planet)
+    system.bodies.push(new Object(1,1,8000,[]))//dummy planet
 }
 function createSurfaceMaps(){
-
+    console.log("generating surface");
+    for(let s = 0; s < system.bodies.length; s++){       //for each orbital body
+        system.bodies[s].map.surface = [];              //clear the surface layer
+        console.log("generating surface of "+s)
+        for(let y = 0; y < system.bodies[s].surfaceArea ** 0.5; y++){
+            system.bodies[s].map.surface.push([]);
+            for(let x = 0; x < system.bodies[s].surfaceArea ** 0.5; x++){
+                setTimeout(function(){
+                    system.bodies[s].map.surface[y].push("("+x+", "+y+")");
+                    console.log("("+x+", "+y+")");
+                },delay);
+            }
+            console.log("done with row "+y)
+        }
+    }
 }
