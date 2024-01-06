@@ -87,20 +87,20 @@ function selectElementalMakeup(){
 function createOrbitalBodies(){
     //adding planets and other orbiting objects
     system.bodies = [];
-    system.bodies.push(new Object(1,1,8000,[]))//dummy planet
+    system.bodies.push(new Object(1,1,800,[]))//dummy planet
 }
-function createSurfaceMaps(){
+async function createSurfaceMaps(){
     console.log("generating surface");
     for(let s = 0; s < system.bodies.length; s++){       //for each orbital body
-        system.bodies[s].map.surface = [];              //clear the surface layer
+        system.bodies[s].map.surface = [];               //clear the surface layer
         console.log("generating surface of "+s)
         for(let y = 0; y < system.bodies[s].surfaceArea ** 0.5; y++){
             system.bodies[s].map.surface.push([]);
             for(let x = 0; x < system.bodies[s].surfaceArea ** 0.5; x++){
-                setTimeout(function(){
+
                     system.bodies[s].map.surface[y].push("("+x+", "+y+")");
                     console.log("("+x+", "+y+")");
-                },delay);
+
             }
             console.log("done with row "+y)
         }
